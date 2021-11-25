@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\ElectionSurveyPostController;
+use App\Http\Controllers\API\ElectionSurveyControllerAPI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/election-survey',[\App\Http\Controllers\API\ElectionSurveyControllerAPI::class,'index']);
+
+Route::post('login',[ElectionSurveyControllerAPI::class,'login']);
+Route::post('register',[ElectionSurveyControllerAPI::class,'register']);
+Route::post('reset-password',[ElectionSurveyControllerAPI::class,'reset-password']);
+
+
+
+
+Route::get('get-all-posts',[ElectionSurveyPostController::class,'getAllPosts']);
+Route::get('get-post',[ElectionSurveyPostController::class,'getPost']);
+Route::get('search-post',[ElectionSurveyPostController::class,'searchPost']);

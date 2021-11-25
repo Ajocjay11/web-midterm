@@ -29,3 +29,5 @@ Route::get('/home', [
 Route::resource('electionSurveys', App\Http\Controllers\ElectionSurveyController::class);
 
 Route::resource('electionSurveys', App\Http\Controllers\ElectionSurveyController::class);
+
+Route::resource('logs', App\Http\Controllers\LogController::class);
